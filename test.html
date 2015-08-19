@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>button{width: 100px;}input{width: 300px;}</style>
+</head>
+<body>
+
+<ul id="messages"></ul>
+
+<button id="disconnect">disconnect</button>
+<button id="connect">connect</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+    var socket = io.connect('http://172.16.20.222:4000');
+
+    $('#disconnect').click(function(){
+        socket.disconnect();
+    });
+    $('#connect').click(function(){
+//        socket.socket.reconnect();
+//        socket = io.connect('http://localhost:3000',{'force new connection':true });
+        socket = io.connect('http://172.16.20.222:4000',{'forceNew':true });
+        socket.on('connect', function(msg){
+            socket.emit('join', prompt('your name?'));
+        });
+    });
+    socket.on('connect', function(msg){
+        socket.emit('join', prompt('your name?'));
+    });
+    socket.on("disconnect", function(){
+        console.log("client disconnected from server");
+    });
+
+</script>
+</body>
+</html>

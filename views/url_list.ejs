@@ -1,0 +1,31 @@
+
+<% var title = 'TAS WebProfiler' %>
+<% include head2 %>
+    <div class="main_container2" id="main_container2" style = "height:95%;width:100%;float:left;">
+        <div class="header_main">
+            <div class="cs_div_validation" style="width:auto;">
+                <div id="select_Div" class="search_Divs_new" style="width:auto;">
+                    <select id="batch-lists">
+                       <%- select_batch %>    
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="cs_main_div" id="div_process2" style="overflow:auto;">
+            <table id="doc_master_tableA">
+                <tr class="table-header-row">
+                    <th class="table_header" width="5%">No.</th>
+                    <th class="table_header" width="15%">Date</th>
+                    <th class="table_header" width="5%">Agent ID</th>
+                    <th class="table_header" width="5%">URL ID</th>
+                    <th class="table_header" width="30%">Base Urls</th>
+                    <th class="table_header" width="30%">Final Urls</th>
+                    <th class="table_header" width="5%">Process</th>
+                    <th class="table_header" width="5%">Delete</th>
+                </tr>
+                <%- table_rows %> 
+            </table>
+        </div>
+    </div>
+
+<% include foot %>

@@ -1,0 +1,62 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'events' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 warn package.json node@0.0.0 No description
+5 warn package.json node@0.0.0 No repository field.
+6 warn package.json node@0.0.0 No README data
+7 verbose cache add [ 'events', null ]
+8 verbose cache add name=undefined spec="events" args=["events",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'events',
+9 verbose parsed url   path: 'events',
+9 verbose parsed url   href: 'events' }
+10 silly lockFile 82d50d90-events events
+11 verbose lock events /root/.npm/82d50d90-events.lock
+12 silly lockFile 82d50d90-events events
+13 silly lockFile 82d50d90-events events
+14 verbose addNamed [ 'events', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 2045b4dd-events events@
+17 verbose lock events@ /root/.npm/2045b4dd-events.lock
+18 silly addNameRange { name: 'events', range: '*', hasData: false }
+19 verbose url raw events
+20 verbose url resolving [ 'https://registry.npmjs.org/', './events' ]
+21 verbose url resolved https://registry.npmjs.org/events
+22 info trying registry request attempt 1 at 11:38:15
+23 http GET https://registry.npmjs.org/events
+24 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+25 info trying registry request attempt 2 at 11:38:45
+26 http GET https://registry.npmjs.org/events
+27 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+28 info trying registry request attempt 3 at 11:40:05
+29 http GET https://registry.npmjs.org/events
+30 silly lockFile 2045b4dd-events events@
+31 silly lockFile 2045b4dd-events events@
+32 error network getaddrinfo ENOTFOUND
+32 error network This is most likely not a problem with npm itself
+32 error network and is related to network connectivity.
+32 error network In most cases you are behind a proxy or have bad network settings.
+32 error network
+32 error network If you are behind a proxy, please make sure that the
+32 error network 'proxy' config is set properly.  See: 'npm help config'
+33 error System Linux 3.3.4-5.fc17.x86_64
+34 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "events"
+35 error cwd /var/www/html/janardan_auth
+36 error node -v v0.10.26
+37 error npm -v 1.4.3
+38 error syscall getaddrinfo
+39 error code ENOTFOUND
+40 error errno ENOTFOUND
+41 verbose exit [ 1, true ]

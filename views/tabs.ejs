@@ -1,0 +1,132 @@
+<% var title = 'TAS WebProfiler' %>
+<% include tabs_head %>
+    <div class="main_container2" id="main_container3" style = "height:95%;width:100%;float:left;display:block;">
+        <div id="left_section">
+            <div id="contentDiv" class="sb_mainDiv">
+                <div class="sb_ButtonDiv" id="tab_header">
+                    <div id="chng_tabs">
+                        <ul>
+                            <li id="tabli_2" class="active" title="Topic Classification" onclick="TASApp.TAB.switch_tabs(2)"><a >Topic-Classification</li>
+                            <li id="tabli_3" class="n_active" title="Topic unit" onclick="TASApp.TAB.switch_tabs(3)">Topic-Units</li>
+                            <li id="tabli_4" class="n_active" title="Topic Sub Units" onclick="TASApp.TAB.switch_tabs(4)">Topic-Subunits</li>
+                            <li id="tabli_5" class="n_active" title="Topic Sub Units" onclick="TASApp.TAB.switch_tabs(5)">Validation</li>
+                        </ul>
+                    </div>
+                    <img src="icons/add.png" height="17" width="17" style="margin-top:3px 5px; float:right;" onclick="TASApp.TAB.Go_To_Mgmt();" title="Create New Home Page" class="tooltip a_right"/>
+                </div>
+
+                <div id="tab_menu_header" class="sb_headerDiv" style="display:none;"></div>
+                <div id="url_content_1_home" class="sb_TopDiv2" style="height:42%;overflow:none;">
+                </div>
+                <div class="sb_ButtonDiv" id="crop_tool_header" style="" >
+                </div>
+                <div id="profile_top_header_1_home" class="sb_TopDiv">
+                    <div id="profile_div" class="profile_div">
+                    </div>
+                </div>
+                <div id="footerDiv" class="footerDiv" ></div>
+            </div>
+        </div>
+        <!-- ****** Left Section End ********** -->
+        <div id="right_section">
+            <div id="process_div_rnd" class="psub_div" style="position:absolute;display:none;height:160px;top:202.5px;left:633px;">
+                <img src="images/process_rnd.gif"></img><p id="process_div_rnd_p">Processing Data Please Wait...</p>
+            </div>
+            <div id="main_div1" style="float:left; width:100%; height:100%;display:none;overflow:auto;">
+                <div id="Con_Div" style="float:left;width:100%;height:100%;"> </div>
+            </div>
+            <div id="parent" style="display:none;">
+                <div id="header" class="header_main" style="height:15px;"></div>
+                 <div id="content" style="top:15px;height:97%;width:100%;overflow:auto;">
+                    <table id="content_table" style="height:auto;width:100%;"></table>
+                 </div>
+            </div>
+             <div id="main_filter_level" style="display:none;float:left; width:100%; height:100%;">
+                <div id="filter_level_main_div1" style="float:left; width:100%; height:58%;overflow:auto;">
+                    <div id="filter_level_Con_Div" style="float:left;width:100%;height:100%;"> </div>
+                </div>
+                <div id="spliter_Y" style="float:left; width:100%; height:25px; position:relative;background:url(images/top_headbg.png) repeat-x scroll 0 0 rgba(0, 0, 0, 0);" ondblclick="TASRightView.gbl.reset_block(this);">
+                    <div id="spliter_resize_Y" style="float:left; width:100%; height:5px; position:relative;background:url(images/resizey.png) repeat-x scroll 0 0 rgba(0, 0, 0, 0); cursor:row-resize;" ondblclick="TASRightView.gbl.reset_block(this);"></div>
+                    <div id="tab-right" style="display:none;">
+                        <ul id="right_all_action_lst">
+                           <li id="kve_merge_tab" onclick="TASRightView.gbl.merge_filter_row(this);">Merge</li>
+                           <li id="kve_split_tab" onclick="TASRightView.gbl.split_filter_row(this);">Split</li>
+                           <li id="kve_dulicate_tab" onclick="TASRightView.gbl.make_duplicate_copy(this);">MakeDuplicate</li>
+                           <li id="kve_map_tab" onclick="TASRightView.gbl.map_taxonomy(this);">ReclassifyTaxonomy</li>
+                           <li id="kve_delete_tab" onclick="TASRightView.gbl.delete_filter_row(this);">Delete</li>
+                           <li id="kve_lstrip_tab" onclick="TASRightView.gbl.strip_filter_row(1);">Lstrip</li>
+                           <li id="kve_rstrip_tab" onclick="TASRightView.gbl.strip_filter_row(2);">Rstrip</li>
+                           <li id="kve_topic_save_tab" onclick="TASRightView.gbl.save_copy(this);">Save</li>
+                           <li id="kve_full_view_tab" onclick="TASRightView.gbl.load_full_view(this);">FullView</li>
+                           <li id="kve_history_tab" onclick="TASRightView.gbl.show_reclaim(this);">Reclaim</li>
+                           <li id="kve_restore_reclassify_tab" onclick="TASRightView.gbl.show_restore_reclassify(this);">RestoreReclassify</li>
+                           <li id="kve_reclassification_tab" onclick="TASRightView.gbl.show_reclassification(this);" style="display:none;">Reclassification</li>
+                           <li id="kve_activate_tab" style="display:none" onclick="TASRightView.gbl.activate_group(this);">Activate</li>
+                           <li id="kve_activate_src_tab" style="display:none" onclick="TASRightView.gbl.activate_src_group(this);">Activate Src</li>
+                           <li id="kve_activate_dest_tab" style="display:none" onclick="TASRightView.gbl.activate_dest_group(this);">Activate Dest</li>
+                           <li id="kve_level_wise" style="display:none;"><select id="kve_drop_down_level_wise_select" onclick="" style="width: 80px;"></select></li>
+                           <li id="kve_pagination" style="display:none;"><select id="kve_drop_down_pagination_select" style="width: 80px;"></select></li>
+                           <li id="kve_apply_auto_tab" style="display:none;"><label style="float:left;" for="kve_apply_auto_select">AutoSelect</label><input id="kve_apply_auto_select" type="checkbox" style="float:left; margin-top:-5px;" onchange="TASRightView.gbl.apply_across_document(this)"/></li>
+                        </ul>
+                        <ul id="right_all_action_lst_reclasify" style="display:none;">
+                           <li id="kve_delete_rtab" onclick="TASRightView.gbl.delete_reclassify_row(this);">Delete</li>
+                           <li id="kve_restore_rtab" onclick="TASRightView.gbl.restore_reclassify_row(this);">Restore</li>
+                        </ul>
+                    </div>
+                    <div id="spliter_close_Y" style="float:right; border:#000 1px solid; width:11px; height:10px; opacity:0.9; padding:0px; line-height:30%; font-size:20px; margin:4px;cursor:pointer;" title="close" onclick="TASRightView.gbl.close_block(this);" >×</div>
+                    <div id="spliter_maximize_Y" style="text-align:center; float:right; border:#000 1px solid; width:11px; height:10px; opacity:0.9; padding:0px; line-height:85%; font-size:9px; margin:4px 0px;cursor:pointer;" title="Maximize" onclick="TASRightView.gbl.maximize_block(this);">□</div>
+                    <div id="spliter_minimize_Y" style="text-align:center; float:right; border:#000 1px solid; width:11px; height:10px; opacity:0.9; padding:0px; line-height:85%; font-size:12px; margin:4px; cursor:pointer;" title="Minimize" onclick="TASRightView.gbl.minimize_block(this);" >&#8722;</div>
+                </div>
+                <div id="filter_content_main" style="float:left; width:100%; height:37%; position:relative; overflow:auto;">
+                   <div id="delimiter_tab" class="delimiter_tab_div">
+                        <div id="delimiter_tab_div_inner" class="delimiter_tab_div_inner">
+                            <span class="Delimiter">,</span>
+                            <span class="Delimiter">;</span>
+                            <span class="Delimiter">.</span>
+                            <span class="Delimiter">:</span>
+                            <span class="Delimiter">&amp;</span>
+                            <span class="Delimiter">+</span>
+                            <span class="Delimiter">*</span>
+                            <span class="Delimiter">(</span>
+                            <span class="Delimiter">)</span>
+                            <span class="Delimiter">Space</span>
+                            <span class="Delimiter">– (Dash)</span>
+                            <span class="Delimiter">- (Hyphen)</span>
+                            <span class="Delimiter">— (Mega Dash)</span>
+                            <span class="Delimiter">_ (Underscore)</span>
+                            <input class="filter_input_btn" id="strip_char" size="8" type="text" value="" placeholder="User Input" unselectable="off" onfocus="TASRightView.gbl.setFocus(this);"/>
+                            <input class="filter_input_btn" id="pos_text" size="4" type="text" value="" placeholder="Pos" onfocus="TASRightView.gbl.setFocusPos(this);"/>
+                            <input class="filter_input_btn" id="enable_delimer_text" type="checkbox" style="float:left; margin-top:6px;"/>
+                        </div>
+                   </div>
+                   <div id="filter_content" style="float:left; width:100%;  position:relative;overflow:auto;"></div>
+                <div id="filter_de-duplication_main_div" style="display:none;float:left; width:100%; height:100%; overflow:hidden; background: linear-gradient(#FFF, #959595) repeat scroll 0% 0% transparent;">
+                  <div id="filter_de-duplication_header" class="header_div" style="float:left;height:25px;width:100%;">
+                    <span id="filter_de-duplication_header-content"></span>
+                    <ul>
+                        <li id="filter_de-duplication_kve_delete_tab"  onclick="TASRightView.gbl.delete_filter_data();">Delete</li>
+                        <li id="filter_de-duplication_kve_delete_tab"  onclick="TASRightView.gbl.restore_filter_data();">Restore</li>
+                    </ul>
+                  </div>
+                  <div id="filter_de-duplication_main_div1" style="float:left; width:100%; height:96%;top:25px;">
+                    <div id="filter_de-duplication_Con_Div" style="position:absolute; left:0px; top:0px;"></div>
+                 </div>
+                </div>
+                <div id="filter_reclassify_main_div" style="display:none;float:left; width:100%; height:100%; overflow:hidden; background: linear-gradient(#FFF, #959595) repeat scroll 0% 0% transparent;">
+                 <div id="filter_reclassify_header" class="header_div" style="float:left;height:25px;width:100%;">
+                    <ul>
+                        <li id="filter_reclassify_kve_delete_tab"  onclick="TASRightView.gbl.delete_reclassify_row(this);">Delete</li>
+                        <li id="filter_reclassify_kve_delete_tab"  onclick="TASRightView.gbl.restore_reclassify_row(this);">Restore</li>
+                        <li><label style="float:left;" for="filter_reclassify_kve_source_unit_select_tab">Source Unit Select</label><input name="unit_select_check" id="filter_reclassify_kve_source_unit_select_tab" type="checkbox" style="float:left; margin-top:-5px;" onchange="TASRightView.gbl.select_all_source_unit(this)"/></li>
+                        <li><label style="float:left;" for="filter_reclassify_kve_classify_unit_select_tab">Reclassify Unit Select</label><input name="unit_select_check" id="filter_reclassify_kve_classify_unit_select_tab" type="checkbox" style="float:left; margin-top:-5px;" onchange="TASRightView.gbl.select_all_classify_unit(this)"/></li>
+                    </ul>
+                 </div>
+                 <div id="filter_reclassify_main_div1" style="float:left; width:100%; height:96%;position:relative; overflow:auto;">
+                    <div id="filter_reclassify_Con_Div" style="float:left; width:100%;position:relative;overflow:auto;"></div>
+                 </div>
+                </div>
+                <iframe style="display:none;" id="iframe_filter" name="iframe_filter" width="100%" height="100%" onload="" ></iframe>
+        </div>
+    </div>
+    <!-- ******    container Three End ************* -->
+<% include tabs_foot %>

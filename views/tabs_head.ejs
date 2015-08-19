@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TAS WebProfiler</title>
+<link rel="stylesheet" href="styles/tab1.css" type="text/css"/>
+<link rel="stylesheet" href="styles/view.css" type="text/css"/>
+<link rel="stylesheet" href="styles/style.css" type="text/css"/>
+<link rel="stylesheet" href="styles/wl_b.css" type="text/css"/>
+<% include url_script %>
+</head>
+<body onload="TASApp.TAB.LoadTab();">
+<!-- ****     Header  ******************** -->
+
+    <div class="header_top" >
+        <div class="logo_tab">
+            <img src="/icons/logo_pc_legal.png"/>
+        </div>
+        <a id="logout_img" style="color: #d95e5e;;float:right;cursor:pointer;padding: 12px 20px 0 8px; font-size:16px;" title="Logout" href="/logout">Logout</a>
+        <a id="back_home" style="color: #d0d0d0;float:right;cursor:pointer;padding: 12px 20px 0 8px; font-size:16px;display: block;" title="Home" href="/url_list">Home</a>
+        <a id="ip_address" style="color: #fff;text-align:center;cursor:pointer;font-size:16px;display: block;padding-top: 12px;">
+            <%- address %>
+        </a>
+    </div>
